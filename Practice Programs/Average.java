@@ -21,7 +21,7 @@ public class Average
       int num1, num2, num3, sum;
       double average;
       
-      System.out.println("Please enter three whole number in your choice, just use space:");
+      System.out.println("Please enter three whole number of your choice, just use space:");
       num1 = keyboard.nextInt();
       num2 = keyboard.nextInt();
       num3 = keyboard.nextInt();
