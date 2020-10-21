@@ -4,11 +4,11 @@ public class Rumors
    public static void main(String[]args)
    {
       int attempts = 50; //amount of times we check to calculate the probabilities
-      Scanner Keyboard = new Scanner(System.in);
+      Scanner Keyboard = new Scanner(System.in); //read data
       System.out.print("Please enter the number of the guests at the party: ");
-      int n = Keyboard.nextInt();
+      int n = Keyboard.nextInt(); //read n
       int countRumors = 0;  //how many times all people heard the rumor
-      int peopleReached = 0;
+      int peopleReached = 0; //number of people who heard the rumor
       for(int i=0; i<attempts; i++)
       {
          boolean guests[] = new boolean[n];
@@ -18,16 +18,16 @@ public class Rumors
          int currentPerson = 1; //currently Bob
          while(!rumorsHeard)
          {
-            nextPerson = 1 + (int)(Math.random()*(n-1));
-            if (nextPerson == currentPerson)
+            nextPerson = 1 + (int)(Math.random()*(n-1)); //randomize next person
+            if (nextPerson == currentPerson)//check the current person
             {
-               while(nextPerson == currentPerson)
+               while(nextPerson == currentPerson)//randomize until we get another person
                nextPerson = 1 + (int)(Math.random()*(n-1));
             }
             
-            if(guests[nextPerson])
+            if(guests[nextPerson])//if someone heard it
             {
-               if(rumorSpreaded(guests))
+               if(rumorSpreaded(guests))//if all people heard 
                   countRumors++;
                   peopleReached += countPeopleReached(guests);
                   rumorsHeard = true;
@@ -52,10 +52,12 @@ public class Rumors
       {
          if (arr[i])
          counter ++;
-         // return counter; 
+          
       }
       return counter;
    }
+   
+   
    
    public static boolean rumorSpreaded(boolean arr[])
    {
